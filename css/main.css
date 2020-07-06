@@ -1,0 +1,16 @@
+:root{
+  --primary-color:#9938FB;
+  --secondary-color:#FBFBFB;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:inherit;
+}
+html{
+  font-size:62.5%;
+}
+body{
+  min-height:100vh;
+  box-sizing:border-box;
+}
