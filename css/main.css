@@ -11,6 +11,10 @@ html{
   font-size:62.5%;
 }
 body{
+  background:var(--primary-color);
   min-height:100vh;
   box-sizing:border-box;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
