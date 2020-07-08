@@ -6,6 +6,25 @@
   const operations = ['lb1'];
   const elements = ['in1','lb1','in2'];
 
+  document.getElementById('add').addEventListener('click', ev => {
+    const input = document.createElement('input');
+    input.id = `in${inputs.length+1}`;
+    input.className = 'input';
+    input.setAttribute('type','number');
+    inputs.push(input.id);
+
+    const label = document.createElement('label');
+    label.id = `lb${operations.length+1}`;
+    label.className = 'label';
+    operations.push(label.id);
+    label.textContent = '+';
+
+    elements.push(label.id, input.id);
+    
+    document.querySelector('.content').appendChild(label);
+    document.querySelector('.content').appendChild(input);
+  });
+
   document.addEventListener('keypress', ev => {
     if(ev.key === 'Enter'){
       try{
