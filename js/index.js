@@ -6,6 +6,17 @@
   const operations = ['lb1'];
   const elements = ['in1','lb1','in2'];
 
+  const checkAndChange = text => {
+    if(text === '+') return '-';
+    if(text === '-') return '*';
+    if(text === '*') return '/';
+    if(text === '/') return '+';
+  };
+
+  document.getElementById(operations[0]).addEventListener('click', e => {
+    e.target.textContent = checkAndChange(e.target.textContent);
+  });
+
   document.getElementById('add').addEventListener('click', ev => {
     const input = document.createElement('input');
     input.id = `in${inputs.length+1}`;
@@ -18,7 +29,10 @@
     label.className = 'label';
     operations.push(label.id);
     label.textContent = '+';
-
+    label.addEventListener('click', e => {
+      e.target.textContent = checkAndChange(e.target.textContent);
+    });
+    
     elements.push(label.id, input.id);
     
     document.querySelector('.content').appendChild(label);
